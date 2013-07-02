@@ -1,4 +1,4 @@
-module Data.List (
+module Data.OtherList (
  funky
 ) 
 
