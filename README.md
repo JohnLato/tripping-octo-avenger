@@ -21,9 +21,22 @@ import Data.List
 Suppose this module is compiled, then the shadowing module is renamed.  Then
 the module Data.Top is changed to import both Data.List from package base,
 and the renamed Data.OtherList.  Attempting to compile Data.Top with
-ghc-parmake will now fail, because it attempts to load both the (out-of-date)
-List.{hi|o} files and Data.OtherList, leading to multiple definitions
-of ```foo``` in scope.
+ghc-parmake will now fail.
+
+To run this test, run the file ```runDemo.sh```
+
+```
+#!/bin/bash
+
+git reset --hard && cd Data && rm -f *.hi && rm -f *.o && cd -
+git checkout master
+
+ghc Data/Top.hs
+sleep 1
+git checkout step2
+ghc -c Data/Top.hs
+```
+
 
 It appears that ```ghc -c``` (as called by ghc-parmake) first loads the old
 interface file Data/Top.hi, which points to Data/List.{hi|o}.  Calling
