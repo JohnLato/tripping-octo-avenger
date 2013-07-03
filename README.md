@@ -31,10 +31,10 @@ To run this test, run the file ```runDemo.sh```
 git reset --hard && cd Data && rm -f *.hi && rm -f *.o && cd -
 git checkout master
 
-ghc Data/Top.hs
+ghc-parmake Data/Top.hs
 sleep 1
 git checkout step2
-ghc -c Data/Top.hs
+ghc-parmake Data/Top.hs
 ```
 
 
@@ -43,5 +43,5 @@ interface file Data/Top.hi, which points to Data/List.{hi|o}.  Calling
 ```ghc -c --make``` works, incidentally.
 
 This isn't ghc-parmake specific: the real problem is that calling  ```ghc -c```
-will lead to exactly the same behavior.  Interestingly, ```ghc -c --make```
-works properly.
+will lead to exactly the same behavior.  However this may be ghc -c working as
+designed...
