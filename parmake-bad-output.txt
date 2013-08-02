@@ -1,0 +1,19 @@
+% git clean -fdx && ./runDemo.sh 
+HEAD is now at e8746c6 use parmake
+/home/niklas/src/tripping-octo-avenger
+Already on 'master'
+[1 of 2] Compiling Data.List        ( Data/List.hs, Data/List.o )
+[2 of 2] Compiling Data.Top         ( Data/Top.hs, Data/Top.o )
+Warning: output was redirected with -o, but no output will be generated
+because there is no Main module.
+Branch step2 set up to track remote branch step2 from origin by rebasing.
+Switched to a new branch 'step2'
+[1 of 2] Compiling Data.OtherList   ( Data/OtherList.hs, Data/OtherList.o )
+[2 of 2] Compiling Data.Top         ( Data/Top.hs, Data/Top.o )
+
+Data/Top.hs:7:5:
+    Ambiguous occurrence `funky'
+    It could refer to either `Data.List.funky',
+                             imported from `Data.List' at Data/Top.hs:3:1-16
+                          or `Data.OtherList.funky',
+                             imported from `Data.OtherList' at Data/Top.hs:4:1-21
